@@ -1,0 +1,17 @@
+pipeline{
+
+agent any
+stages{
+stage('backup'){
+steps{
+
+sh '''
+
+echo "the back is stored"`cp /var/lib/jenkins /home/SriYeshwanth/MNPdevops/GIT/MNPdevopsRepo/jenkins/backupjenkins/jenkins` 
+
+'''
+}
+}
+}
+}
+
