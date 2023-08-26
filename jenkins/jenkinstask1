@@ -5,8 +5,10 @@ stage('server details'){
 steps{
 
 sh '''
-'echo "the server details are"`cat /etc/os-release`'
- 'echo "sucess you got the result"' 
+
+echo "the server details are"`cat /etc/os-release`'
+echo "sucess you got the result"' 
+
 '''
 }
 }
