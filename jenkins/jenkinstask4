@@ -8,7 +8,7 @@ pipeline {
                      sh '''
 echo "hello ${USER}"
 
-if [ "${USER}" == [A-Z] ]
+if [[ "${USER}" =~ [A-Z] && "${USER}" =~ [a-z] && "${USER}" =~ [0-9] ]]
 then
 echo " good to enter ${USER} "
 else
