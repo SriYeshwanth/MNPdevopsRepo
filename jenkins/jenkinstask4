@@ -12,6 +12,7 @@ pipeline {
                     } else {
                         error "Invalid username. Please enter 'sri'."
                    '''
+                   }
                   }
                 }
             }
