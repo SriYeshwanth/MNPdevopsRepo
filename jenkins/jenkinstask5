@@ -19,3 +19,4 @@ echo "all good to go yet your ip is `hostname -I`"
 }
 }
 }
+}
