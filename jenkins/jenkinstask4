@@ -6,15 +6,10 @@ pipeline {
             steps {
                 script {
                      sh '''
+'echo "hello ${USER}"'
 
-                    if (${USER} == 'sri') ;
-                    then 
-                        echo "Welcome Mr. ${USER}"
-                     else 
-                        error "Invalid username. Please enter 'sri'."
-                   '''
-                   
-                  }
+'''
+                }
                 }
             }
         }
