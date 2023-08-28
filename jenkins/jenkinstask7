@@ -7,7 +7,7 @@ script{
 try{
 sh '''
 
-echo "dont do this "
+echo "dont do this 
 '''
 } catch (Exception e){
 echo "there was an error"
