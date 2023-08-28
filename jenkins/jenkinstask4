@@ -4,7 +4,7 @@ stages{
 stage('getting user input'){
 steps{
 sh '''
-if ( ${USER} = "sri")
+if ( ${USER} )
 then 
    echo ("the user name is right welcome ${USER}")
 else
