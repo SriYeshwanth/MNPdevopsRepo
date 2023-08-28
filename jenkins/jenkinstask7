@@ -8,7 +8,7 @@ try{
 
 echo "dont do this 
 '''
-}catch (Exception e){
+} catch (Exception e){
 echo "there was an error"
 }
 }
