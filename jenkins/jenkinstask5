@@ -9,12 +9,13 @@ set -x
 echo "your ip is `hostname -I`"
 
 }
-stage('no debuug stages')
+stage('no debuug stages'){
 steps{
 sh '''
 
 echo "all good to go yet your ip is `hostname -I`"
 
+}
 }
 }
 }
