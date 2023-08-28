@@ -5,11 +5,12 @@ stage('getting user input'){
 steps{
 sh '''
 
-for i in ${USER} ;
-do
+if ${USER} == "sri" ;
+then
    echo "the user name is right welcome mr ${USER}"
-
-done 
+else 
+  echo " enther the user name right "
+fi
 
 '''
 }
