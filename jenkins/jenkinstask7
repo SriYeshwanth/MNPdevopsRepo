@@ -14,7 +14,7 @@ echo "there was an error"
 }
 }
 stage('test stage 2'){
-step{
+steps{
 sh ''' 
 
 echo " all good `whoami`"
