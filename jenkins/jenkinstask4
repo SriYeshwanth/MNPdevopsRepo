@@ -7,12 +7,13 @@ pipeline {
                 script {
                      sh '''
 
-                    if (${USER} == 'sri') {
+                    if (${USER} == 'sri') ;
+                    then 
                         echo "Welcome Mr. ${USER}"
-                    } else {
+                     else 
                         error "Invalid username. Please enter 'sri'."
                    '''
-                   }
+                   
                   }
                 }
             }
