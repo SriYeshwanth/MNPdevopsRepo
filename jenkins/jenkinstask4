@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                      sh '''
-'echo "hello ${USER}"'
+echo "hello ${USER}"
 
 '''
                 }
