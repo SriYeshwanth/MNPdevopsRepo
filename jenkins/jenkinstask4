@@ -8,6 +8,12 @@ pipeline {
                      sh '''
 echo "hello ${USER}"
 
+if ${USER}=="sri" 
+then
+echo " good to enter ${USER} "
+else
+echo "not good to enter ${USER}"
+fi
 '''
                 }
                 }
