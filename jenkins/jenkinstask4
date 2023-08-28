@@ -1,20 +1,37 @@
 
- 
 pipeline {
     agent any
-    
+
     stages {
-        stage('User Input and Validation') {
+        stage('Input') {
             steps {
-                sh '''
-                    if  ${USER}== ^[0-9]+$  
-                    then
-                        echo "You entered a valid number: ${USER}"
-                    else
-                        echo "Invalid input. Please enter a valid number."
-                        exit 1
-                    fi
-                '''
+                script {
+                    userInput = input(
+                        id: 'userNameInput',
+                        message: 'Please enter your name:',
+                        parameters: [string(defaultValue: '', description: 'User Name', name: 'USER_NAME')]
+                    )
+                }
+            }
+        }
+
+        stage('Validation') {
+            steps {
+                script {
+                    def userName = userInput['USER_NAME']
+
+                    // Function to validate the user name using a regular expression
+                    def validateName = { name ->
+                        def pattern = /^[A-Za-z]+([A-Za-z' -])*$/
+                        return name =~ pattern
+                    }
+
+                    if (validateName(userName)) {
+                        echo "Valid name: ${userName}"
+                    } else {
+                        error "Invalid name: ${userName}"
+                    }
+                }
             }
         }
     }
