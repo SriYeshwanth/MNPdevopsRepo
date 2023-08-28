@@ -7,9 +7,9 @@ pipeline {
         stage('User Input and Validation') {
             steps {
                 sh '''
-                    read -p "Please enter a number: " userInput
-                    if [[ $userInput =~ ^[0-9]+$ ]]; then
-                        echo "You entered a valid number: $userInput"
+                    "Please enter a number: " ${USER}
+                    if [[ ${USER}=~ ^[0-9]+$ ]]; then
+                        echo "You entered a valid number: ${USER}"
                     else
                         echo "Invalid input. Please enter a valid number."
                         exit 1
