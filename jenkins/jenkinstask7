@@ -3,8 +3,8 @@ agent any
 stages{
 stage('test stage1'){
 steps{
-try{
 sh '''
+try{
 
 echo "dont do this 
 }catch (Exception e){
