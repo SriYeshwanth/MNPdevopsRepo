@@ -1,38 +1,19 @@
-
 pipeline {
     agent any
 
     stages {
-        stage('Input') {
-            steps {
-                script {
-                    userInput = input(
-                        id: 'userNameInput',
-                        message: 'Please enter your name:',
-                        parameters: [string(defaultValue: '', description: 'User Name', name: 'USER_NAME')]
-                    )
-                }
-            }
-        }
-
         stage('Validation') {
             steps {
                 script {
-                    def userName = userInput['USER_NAME']
+                     sh '''
 
-                    // Function to validate the user name using a regular expression
-                    def validateName = { name ->
-                        def pattern = /^[A-Za-z]+([A-Za-z' -])*$/
-                        return name =~ pattern
-                    }
-
-                    if (validateName(userName)) {
-                        echo "Valid name: ${userName}"
+                    if (${USER} == 'sri') {
+                        echo "Welcome Mr. ${USER}"
                     } else {
-                        error "Invalid name: ${userName}"
-                    }
+                        error "Invalid username. Please enter 'sri'."
+                   '''
+                  }
                 }
             }
         }
     }
-}
