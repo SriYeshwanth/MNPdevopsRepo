@@ -6,7 +6,7 @@ steps{
 sh '''
 if ( ${USER} == "sri" )
 then 
-   echo ("the user name is right welcome ${USER}")
+   echo '("the user name is right welcome ${USER}")'
 else
   echo (" enter the vaild username")
 fi
