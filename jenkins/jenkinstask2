@@ -8,7 +8,7 @@ steps{
 sh '''
 
 echo "back is stored"
-bash `cp -r /var/lib/jenkins /home/SriYeshwanth/MNPdevops/jenkins/`
+bash `cp -r /var/lib/jenkins /root/GIT/MNPdevopsRepojenkins/jenkins/backupjenkins/`
 
 '''
 }
