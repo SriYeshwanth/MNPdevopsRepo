@@ -8,7 +8,6 @@ set -x
 
 echo "your ip is `hostname -I`"
 
-}
 stage('no debuug stages'){
 steps{
 sh '''
