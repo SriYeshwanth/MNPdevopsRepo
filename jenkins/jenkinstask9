@@ -6,9 +6,11 @@ pipeline {
             steps {
                script{
              def srivar="calling success"
+                  sh '''
                     echo "the calling is fixed ${srivar}"
                     echo ${srivar}
-            }
+                    '''            
+}
         }
     }
 }
