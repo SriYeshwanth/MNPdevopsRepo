@@ -1,4 +1,4 @@
- def srivar ="calling sucess"
+ def srivar='calling sucess'
 pipeline{
 agent any
 stages{
