@@ -5,8 +5,8 @@ stages{
 stage('this one original for calling'){
 steps{
 sh '''
-echo "the calling is fixed ${srivar} "
-echo ${srivar}
+echo "the calling is fixed \${srivar} "
+echo \${srivar}
 '''
 }
 }
