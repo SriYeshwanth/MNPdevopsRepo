@@ -1,14 +1,15 @@
- def srivar="calling sucess"
-pipeline{
-agent any
-stages{
-stage('this one original for calling'){
-steps{
-sh '''
-echo "the calling is fixed \${srivar} "
-echo \${srivar}
-'''
-}
-}
-}
+def srivar = "calling success"
+
+pipeline {
+    agent any
+    stages {
+        stage('this one original for calling') {
+            steps {
+                sh """
+                    echo "the calling is fixed \${srivar}"
+                    echo \$srivar
+                """
+            }
+        }
+    }
 }
