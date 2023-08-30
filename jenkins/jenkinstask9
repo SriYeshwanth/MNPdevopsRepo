@@ -1,11 +1,11 @@
-def srivar="callingsucess"
+def srivar = "callingsucess"
 
 pipeline{
 agent any
 stages{
 stage('this one original for calling'){
 steps{
-sh ' echo "the calling is fixed" ${srivar} '
+sh ' echo "the calling is fixed ${srivar} " ' 
 }
 }
 }
