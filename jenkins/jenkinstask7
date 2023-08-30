@@ -8,14 +8,11 @@ pipeline {
 
                     sh """
                        echo "hellow `whoami
+
+                       echo "this one executed"
                     """
                 }
             }
-        steps{
-              sh """
-              echo "this was executed"
-                """
-}
 }
 
         stage('Stage 2') {
