@@ -12,8 +12,13 @@ pipeline {
                     """
                 }
             }
-        }
-        
+        steps{
+              sh '''
+              echo "this was executed"
+                '''
+}
+}
+
         stage('Stage 2') {
             steps {
                 sh """
