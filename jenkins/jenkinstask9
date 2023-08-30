@@ -6,7 +6,8 @@ pipeline {
             steps {
                script{
              def srivar="calling success"
-                    echo "the calling is fixed ${srivar}"
+                    echo "the calling is fixed ${srivar}"  
+                     echo "all good"
                                 
 }
         }
