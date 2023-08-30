@@ -5,10 +5,10 @@ pipeline {
     stages {
         stage('this one original for calling') {
             steps {
-                 def srivar="calling success"
+                 def myvar="calling success"
                 sh """
-                    echo "the calling is fixed \${srivar}"
-                    echo \${srivar}
+                    echo "the calling is fixed \${myvar}"
+                    echo \${myvar}
                 """
             }
         }
