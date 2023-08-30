@@ -1,4 +1,4 @@
-def srivar="calling sucess"
+def srivar="callingsucess"
 
 pipeline{
 agent any
