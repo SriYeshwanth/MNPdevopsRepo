@@ -1,10 +1,11 @@
-@Library srivar
+
 pipeline {
     agent any
     stages {
         stage('this one original for calling') {
             steps {
                script{
+                 @Library srivar
              def srivar="calling success"
                     echo "the calling is fixed ${srivar}"  
                      echo "all good"
