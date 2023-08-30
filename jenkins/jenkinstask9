@@ -1,4 +1,4 @@
-def srivar = "calling success"
+def srivar="calling success"
 
 pipeline {
     agent any
@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh """
                     echo "the calling is fixed \${srivar}"
-                    echo \$srivar
+                    echo srivar
                 """
             }
         }
