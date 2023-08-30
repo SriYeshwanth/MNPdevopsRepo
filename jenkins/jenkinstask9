@@ -1,15 +1,15 @@
-def srivar="calling success"
 
 pipeline {
     agent any
     stages {
         stage('this one original for calling') {
             steps {
-                sh """
-                    echo 'the calling is fixed \${srivar}'
-                    echo \${srivar}
-                """
+               script{
+             def srivar="calling success"
+                    echo "the calling is fixed ${srivar}"
+                    echo ${srivar}
             }
         }
     }
+}
 }
