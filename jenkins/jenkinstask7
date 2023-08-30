@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     stages {
-       catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
         stage('Stage 1') {
+           catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
             steps {
                     sh """
                        echo "hellow `whoami
