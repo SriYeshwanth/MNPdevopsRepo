@@ -1,0 +1,3 @@
+FROM mysql  
+ENV user = mysql
+EXPOSE 3306    
