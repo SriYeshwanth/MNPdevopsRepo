@@ -1,0 +1,62 @@
+pipeline{
+    agent any
+    
+    stages{
+        stage('building_the_image'){
+            steps{
+                sh '''
+                
+                docker image build -t task6 /tmp/dockertask6
+                
+                '''
+            
+                }
+            }
+         stage('Tagging image'){
+             steps{
+                 sh '''
+                 docker image tag task6 sriyeshwanth/task6:latest
+                 
+                 '''
+             }
+         }
+         stage('pushing image'){
+             steps{
+                 sh '''
+                 docker login -u sriyeshwanth -p +91Yeshwanth
+                 docker image push sriyeshwanth/task6:latest 
+                 
+                 '''
+                 
+             }
+         
+         }
+         stage('Slave1'){
+             agent{
+                 label 'SLAVE_1'
+             }
+             steps{
+                 sh '''
+                 cd /tmp/docker
+                 docker image pull sriyeshwanth/task6:latest
+                 
+                 '''
+             }
+             }
+             stage('conatiner stage'){
+                 agent{
+                     label 'SLAVE_1'
+                 }
+                 steps{
+                     sh '''
+                     docker container run -d --name ct1 -p 9000:80 sriyeshwanth/task6:latest
+                     docker container start ct1
+                     
+                     docker container ls 
+                     docker container ls -a 
+                     
+                     '''
+                 }
+             }
+         }
+        }

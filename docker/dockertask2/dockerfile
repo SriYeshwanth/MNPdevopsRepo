@@ -1,0 +1,6 @@
+FROM nginx
+COPY dockertask2.sh /home/dockertask2.sh 
+RUN chmod 777 /home/dockertask2.sh
+ENTRYPOINT ["./home/dockertask2.sh"]
+EXPOSE 80
+ENV user=nginx
